@@ -528,6 +528,91 @@ section{position:relative;padding:72px 0}
 
 footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
 
+
+/* ===== live visuals ===== */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::after,.tg-btn::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:38%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(-160%) skewX(-20deg);animation:shine 3.8s ease-in-out infinite;pointer-events:none}
+.tg-btn{position:relative;overflow:hidden}
+@keyframes shine{0%,62%{transform:translateX(-160%) skewX(-20deg)}100%{transform:translateX(330%) skewX(-20deg)}}
+
+.bands{position:relative;padding:18px 0 34px;overflow:hidden;z-index:1}
+.band{background:var(--ink);color:#fff;rotate:-2.5deg;margin:0 -40px;padding:13px 0;overflow:hidden;white-space:nowrap;box-shadow:0 18px 30px -18px rgba(0,0,0,.5)}
+.band.b2{background:linear-gradient(90deg,var(--or),var(--or-2));rotate:2deg;margin-top:-4px}
+.band.b3{background:linear-gradient(90deg,#2A9CB1,#3BB3C7)}
+.track{display:inline-flex;align-items:center;gap:24px;padding-right:24px;font:700 19px/1 var(--fh);letter-spacing:.05em;text-transform:uppercase;animation:mq 34s linear infinite}
+.track .ic{color:var(--or-2);font-size:15px}
+.b2 .track .ic,.b3 .track .ic{color:#fff}
+.b2 .track{animation-direction:reverse}
+html.gs .track{animation:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.sent-wrap{position:relative}
+.lt{position:absolute;z-index:2;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.88);box-shadow:var(--sh-s);display:grid;place-items:center;font:700 20px/1 var(--fh);color:var(--teal);pointer-events:none}
+.lt.or{color:var(--or)}
+
+.market{margin-top:26px;background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:14px 12px 16px;overflow:hidden}
+.market svg{width:100%;height:auto;display:block}
+.mk-cap{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:13px;color:var(--mute);padding:0 6px}
+.mk-cap b{font:700 22px/1 var(--fh);color:var(--teal);margin-left:4px}
+.mk-cap b.o{color:var(--or)}
+
+.rail{--cw:clamp(44px,11.5vw,92px);position:relative;margin-top:28px;padding:34px 0 0;overflow:hidden;text-align:center}
+.rail-tr{display:inline-flex;align-items:flex-end;position:relative;z-index:1}
+.car{position:relative;width:var(--cw);height:calc(var(--cw) * .66);margin-right:6px;border-radius:10px 10px 6px 6px;display:grid;place-items:center;font:700 clamp(9.5px,2.6vw,15px)/1 var(--fh);letter-spacing:.05em;text-transform:uppercase;box-shadow:inset 0 -6px 0 rgba(0,0,0,.08)}
+.car::after{content:"";position:absolute;right:-7px;bottom:22%;width:8px;height:4px;background:#33434C;border-radius:2px}
+.car.s{background:var(--teal-l);color:var(--teal-d)} .car.t{background:var(--gold-l);color:#A86A12}
+.car.m{background:#E5F5DC;color:#3F7A1F} .car.p{background:#EAE7FF;color:#5A4BD8} .car.o{background:var(--or-l);color:#D44E1E}
+.wl{position:absolute;bottom:calc(var(--cw) * -.14);width:calc(var(--cw) * .26);height:calc(var(--cw) * .26);border-radius:50%;background:linear-gradient(#8798A1,#8798A1) center/2px 100% no-repeat,linear-gradient(90deg,#8798A1,#8798A1) center/100% 2px no-repeat,#1E2A31;border:2px solid #4A5C66;left:12%}
+.wl+.wl{left:auto;right:12%}
+.rloco{position:relative;width:calc(var(--cw) * 1.5)}
+.rloco svg{width:100%;height:auto;display:block}
+.rloco .wl{bottom:calc(var(--cw) * -.1);width:calc(var(--cw) * .3);height:calc(var(--cw) * .3)}
+.rloco .wl.w3{left:44%}
+.puffs{position:absolute;left:14%;top:-6px;width:1px;height:1px}
+.puff{position:absolute;left:0;top:0;width:18px;height:18px;margin:-9px;border-radius:50%;background:#fff;box-shadow:0 4px 10px rgba(30,42,49,.12)}
+.rails{height:16px;margin-top:calc(var(--cw) * .12);background:linear-gradient(#4A5C66,#4A5C66) top/100% 3px no-repeat,repeating-linear-gradient(90deg,#B98A5E 0 10px,transparent 10px 26px);border-radius:3px}
+.rail-cap{display:flex;justify-content:space-between;font:600 10.5px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.rail-cap b{color:var(--or)}
+
+.focus{position:relative;overflow:hidden;padding-top:92px}
+.focus .chips{position:relative;z-index:1}
+.lamp{position:absolute;top:12px;left:50%;width:46px;height:24px;margin-left:-23px;background:#1E2A31;border-radius:24px 24px 8px 8px;z-index:2}
+.lamp::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:10px;margin-left:-9px;border-radius:0 0 10px 10px;background:#FFE7A8;box-shadow:0 0 18px 6px rgba(255,214,120,.8)}
+.beam{position:absolute;top:34px;left:50%;width:96px;margin-left:-48px;height:90px;transform-origin:50% 0;background:linear-gradient(180deg,rgba(255,214,120,.95),rgba(255,214,120,.25) 85%,rgba(255,214,120,0));clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);pointer-events:none;z-index:0}
+
+.mirror{position:relative;overflow:hidden}
+.mirror .shine{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);pointer-events:none;z-index:3;transform:translateX(-140%)}
+.mirror .chips{z-index:1}
+.lbls b{display:inline-block;animation:nudge 1.2s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(-6px)}}
+
+.road{position:relative;height:124px;margin-top:26px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#BFE6EE 0,#E6F6F9 58%,#3B4A53 58%,#33434C 100%);box-shadow:var(--sh)}
+.road .sun{position:absolute;right:26px;top:12px;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#FFE7A8,#FFC24D);box-shadow:0 0 30px 8px rgba(255,200,90,.55)}
+.road .city{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 54'%3E%3Cg fill='%239BD6E1'%3E%3Cpath d='M20 54V30h18v24zM44 54V18h4V8h2v10h4v36zM60 54V34a14 14 0 0 1 28 0v20zM96 54V26h24v28zM150 54V40c0-8 10-14 10-14s10 6 10 14v14zM176 54V6h3V0h2v6h3v48zM200 54V30h30v24zM250 54V36a16 16 0 0 1 32 0v18zM300 54V22h20v32zM330 54V34h22v20z'/%3E%3C/g%3E%3Cg fill='%2375C3A0'%3E%3Cpath d='M128 54V30h3v24zM129 30c-8-2-12 2-14 6 4-4 9-4 14-6zm0 0c8-2 12 2 14 6-4-4-9-4-14-6zm0 0c-4-6-10-6-14-4 5 0 10 2 14 4zm0 0c4-6 10-6 14-4-5 0-10 2-14 4zM288 54V28h3v26zM289 28c-8-2-12 2-14 6 4-4 9-4 14-6zm0 0c8-2 12 2 14 6-4-4-9-4-14-6zm0 0c-4-6-10-6-14-4 5 0 10 2 14 4zm0 0c4-6 10-6 14-4-5 0-10 2-14 4z'/%3E%3C/g%3E%3C/svg%3E");position:absolute;left:0;top:20px;height:54px;width:calc(100% + 380px);background-repeat:repeat-x;background-size:360px 54px}
+.road .lane{position:absolute;left:0;width:calc(100% + 600px);top:96px;height:4px;background:repeating-linear-gradient(90deg,#fff 0 26px,transparent 26px 56px)}
+.taxi{position:absolute;left:0;top:58px;width:132px}
+.taxi svg{width:100%;height:auto;display:block;overflow:visible}
+.bub.typing{display:inline-flex;gap:5px;padding:14px 16px;width:auto}
+.bub.typing i{width:7px;height:7px;border-radius:50%;background:#9AA8AE;animation:tdot 1s infinite}
+.bub.typing i:nth-child(2){animation-delay:.15s} .bub.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{30%{transform:translateY(-5px);background:var(--teal)}}
+
+.coinL{cursor:pointer;transform-style:preserve-3d}
+.coin-hint{margin-top:44px;font-size:12px;color:var(--mute);display:inline-flex;gap:6px;align-items:center}
+.coin-hint .ic{color:var(--or)}
+
+.kz-g .cell.hl{box-shadow:0 0 0 3px var(--or),0 10px 18px -8px rgba(255,98,50,.7)}
+.kz-g .cell.ruc.hl{box-shadow:0 0 0 3px var(--pink)}
+
+.scrib{position:absolute;left:-3%;width:106%;bottom:-.16em;height:.3em;overflow:visible;pointer-events:none;transform-origin:left center}
+.scrib path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;opacity:.6}
+
+.phones{perspective:900px;position:relative}
+html:not(.gs) .taxi{left:calc(50% - 66px)}
+.kz-g .cell.ruc.ok{box-shadow:0 0 0 3px var(--teal)}
+.phone{transform-style:preserve-3d}
+@media (prefers-reduced-motion:reduce){.track,.lbls b,.btn::after,.bub.typing i{animation:none!important}}
+
 /* reveal: GSAP sets transforms; nothing hidden without it */
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -546,6 +631,7 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
     <linearGradient id="gCard" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9461"/><stop offset="1" stop-color="#F2551E"/></linearGradient>
     <linearGradient id="gCloud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#CFE3E9"/></linearGradient>
     <linearGradient id="gRocket" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9A66"/><stop offset="1" stop-color="#E8481A"/></linearGradient>
+    <radialGradient id="gTom" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FF9C8A"/><stop offset=".5" stop-color="#E83A2A"/><stop offset="1" stop-color="#B3241A"/></radialGradient>
     <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FD3E0"/><stop offset="1" stop-color="#2A9CB1"/></linearGradient>
   </defs>
   <symbol id="o-heart" viewBox="0 0 100 92"><path d="M50 88C20 66 4 49 4 30 4 15 15 5 29 5c9 0 17 5 21 13 4-8 12-13 21-13 14 0 25 10 25 25 0 19-16 36-46 58z" fill="url(#gHeart)"/><ellipse cx="27" cy="25" rx="11" ry="7" fill="#fff" opacity=".55" transform="rotate(-30 27 25)"/></symbol>
@@ -650,6 +736,8 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
         </div>
       </div>
       <div>
+        <div class="sent-wrap">
+        <span class="lt" style="left:-8px;top:-4px">ç</span><span class="lt or" style="right:18px;top:-10px">ş</span><span class="lt" style="right:-8px;bottom:40px">ğ</span><span class="lt or" style="left:24px;bottom:-18px">ı</span><span class="lt" style="left:46%;bottom:-22px">ö</span>
         <div class="sent rv" id="heroSent">
           <div class="sent-h"><span class="small">Смотри, куда уходит глагол</span><span class="lang" id="hsLang">RU</span></div>
           <div class="chips" id="hs">
@@ -659,10 +747,13 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
           </div>
           <div class="sent-f"><span class="small" id="hsCap">Русский: <b>S · V · O</b></span><button class="say" data-say="Ben çay içiyorum" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
         </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="bands" aria-hidden="true"><div class="band"><div class="track"><span>Ben çay içiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Eve gidiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Senin için</span><svg class="ic"><use href="#i-star"/></svg><span>Okuduğum kitap</span><svg class="ic"><use href="#i-star"/></svg><span>Türkçe bilmiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Bir kilo domates istiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Ben çay içiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Eve gidiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Senin için</span><svg class="ic"><use href="#i-star"/></svg><span>Okuduğum kitap</span><svg class="ic"><use href="#i-star"/></svg><span>Türkçe bilmiyorum</span><svg class="ic"><use href="#i-star"/></svg><span>Bir kilo domates istiyorum</span><svg class="ic"><use href="#i-star"/></svg></div></div><div class="band b2"><div class="track"><span>Глагол в конце</span><svg class="ic"><use href="#i-star"/></svg><span>SOV</span><svg class="ic"><use href="#i-star"/></svg><span>Читай с конца</span><svg class="ic"><use href="#i-star"/></svg><span>Послелоги</span><svg class="ic"><use href="#i-star"/></svg><span>Сцена перед глаголом</span><svg class="ic"><use href="#i-star"/></svg><span>Зеркало</span><svg class="ic"><use href="#i-star"/></svg><span>Глагол в конце</span><svg class="ic"><use href="#i-star"/></svg><span>SOV</span><svg class="ic"><use href="#i-star"/></svg><span>Читай с конца</span><svg class="ic"><use href="#i-star"/></svg><span>Послелоги</span><svg class="ic"><use href="#i-star"/></svg><span>Сцена перед глаголом</span><svg class="ic"><use href="#i-star"/></svg><span>Зеркало</span><svg class="ic"><use href="#i-star"/></svg></div></div></div>
 
 <!-- ============ STORY ============ -->
 <section id="story" style="padding-top:20px">
@@ -695,6 +786,26 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
       </article>
     </div>
     <div class="dots" id="feedDots"><i class="on"></i><i></i><i></i></div>
+    <div class="market rv" id="market">
+      <svg viewBox="0 0 360 250" role="img" aria-label="Весы на рынке: просил килограмм, получил два">
+        <rect x="10" y="0" width="340" height="30" fill="#fff"/><rect x="10" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="46" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="82" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="118" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="154" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="190" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="226" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="262" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="298" y="0" width="18" height="30" fill="#FF6A3B"/><rect x="334" y="0" width="18" height="30" fill="#FF6A3B"/><circle cx="19" cy="30" r="9" fill="#FF6A3B"/><circle cx="37" cy="30" r="9" fill="#fff"/><circle cx="55" cy="30" r="9" fill="#FF6A3B"/><circle cx="73" cy="30" r="9" fill="#fff"/><circle cx="91" cy="30" r="9" fill="#FF6A3B"/><circle cx="109" cy="30" r="9" fill="#fff"/><circle cx="127" cy="30" r="9" fill="#FF6A3B"/><circle cx="145" cy="30" r="9" fill="#fff"/><circle cx="163" cy="30" r="9" fill="#FF6A3B"/><circle cx="181" cy="30" r="9" fill="#fff"/><circle cx="199" cy="30" r="9" fill="#FF6A3B"/><circle cx="217" cy="30" r="9" fill="#fff"/><circle cx="235" cy="30" r="9" fill="#FF6A3B"/><circle cx="253" cy="30" r="9" fill="#fff"/><circle cx="271" cy="30" r="9" fill="#FF6A3B"/><circle cx="289" cy="30" r="9" fill="#fff"/><circle cx="307" cy="30" r="9" fill="#FF6A3B"/><circle cx="325" cy="30" r="9" fill="#fff"/><circle cx="343" cy="30" r="9" fill="#FF6A3B"/>
+        <rect x="262" y="172" width="84" height="36" rx="5" fill="#C98F55"/><path d="M262 184h84M262 196h84" stroke="#A9733F" stroke-width="2"/>
+        <circle cx="280" cy="166" r="10" fill="url(#gTom)"/><circle cx="300" cy="164" r="10" fill="url(#gTom)"/><circle cx="320" cy="166" r="10" fill="url(#gTom)"/><circle cx="290" cy="152" r="10" fill="url(#gTom)"/><circle cx="310" cy="152" r="10" fill="url(#gTom)"/>
+        <rect x="10" y="206" width="340" height="40" rx="6" fill="#E9CFAE"/><rect x="10" y="206" width="340" height="7" fill="#D9B98F"/>
+        <rect x="122" y="150" width="116" height="58" rx="12" fill="url(#gTeal)"/>
+        <circle cx="180" cy="178" r="21" fill="#fff"/>
+        <text x="166" y="174" font-size="7" font-family="Montserrat,Arial" font-weight="700" fill="#6A7B84">0</text><text x="178" y="166" font-size="7" font-family="Montserrat,Arial" font-weight="700" fill="#6A7B84">1</text><text x="190" y="174" font-size="7" font-family="Montserrat,Arial" font-weight="700" fill="#E8481A">2</text>
+        <line id="mkNeedle" x1="180" y1="178" x2="180" y2="162" stroke="#E8481A" stroke-width="2.6" stroke-linecap="round" transform="rotate(60 180 178)"/>
+        <circle cx="180" cy="178" r="3" fill="#1E2A31"/>
+        <text id="mkRead" x="180" y="204" text-anchor="middle" font-size="9" font-family="Montserrat,Arial" font-weight="700" fill="#fff">2.0 кг</text>
+        <g id="mkPan"><rect x="174" y="136" width="12" height="16" fill="#9AA8AE"/><ellipse cx="180" cy="138" rx="72" ry="11" fill="#C9D3D7"/><ellipse cx="180" cy="135" rx="72" ry="9" fill="#F2F6F7"/><g class="tom"><g transform="translate(132 124)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(154 125)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(176 126)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(198 125)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(220 124)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(143 106)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(165 106)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g><g class="tom"><g transform="translate(187 106)"><circle r="11" fill="url(#gTom)"/><ellipse cx="-4" cy="-4" rx="3.5" ry="2.2" fill="#fff" opacity=".55"/><path d="M-6 -9 L0 -6 L6 -9 L2 -5 L0 -10 L-2 -5 Z" fill="#3F8F2F"/></g></g></g>
+        <g id="mkB1"><rect x="14" y="44" width="142" height="32" rx="12" fill="#2A9CB1"/><path d="M40 76l-6 10 14-10z" fill="#2A9CB1"/><text x="85" y="65" text-anchor="middle" font-size="12.5" font-family="Montserrat,Arial" font-weight="700" fill="#fff">Ben istiyorum…</text></g>
+        <g id="mkB2"><rect x="14" y="86" width="150" height="28" rx="11" fill="#fff" stroke="#BFE6EE" stroke-width="2"/><text x="89" y="104" text-anchor="middle" font-size="11.5" font-family="Montserrat,Arial" font-weight="600" fill="#6A7B84">…bir kilo domates</text></g>
+        <g id="mkB3"><rect x="222" y="50" width="126" height="32" rx="12" fill="#FF6A3B"/><path d="M320 82l8 10-16-10z" fill="#FF6A3B"/><text x="285" y="71" text-anchor="middle" font-size="12.5" font-family="Montserrat,Arial" font-weight="700" fill="#fff">Tamam abi!</text></g>
+      </svg>
+      <div class="mk-cap"><span>просил:<b>1 кг</b></span><span>получил:<b class="o">2 кг</b></span></div>
+    </div>
+
     <p class="lede rv" style="margin-top:26px">Правильно было <b>Bir kilo domates istiyorum</b>. Сначала что. Потом хочу. Ниже разберём, почему так. Чтобы у тебя был ровно тот килограмм, который ты просил.</p>
   </div>
 </section>
@@ -747,6 +858,7 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
       <div class="coinL"><b>O</b><small>что</small></div>
       <div class="coinL v"><b>V</b><small>глагол</small></div>
     </div>
+    <div class="coin-hint"><svg class="ic"><use href="#i-sparkles"/></svg>Нажми на монету: как это по-турецки</div>
     <div class="facts">
       <div class="fact rv"><div class="k">SOV</div><p>Самый частый порядок слов в мире. Больше языков говорят как турки, чем как русские.</p></div>
       <div class="fact rv"><div class="k">Мен шай ішемін</div><p>Казахский, узбекский, кыргызский тоже SOV. Знаешь один из них? У тебя чит-код. Покажу ниже.</p></div>
@@ -761,6 +873,18 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
     <span class="eyebrow">02 · Поезд</span>
     <h2 class="h2">Глагол это <span class="t">локомотив.</span><br>Только он толкает сзади</h2>
     <p class="lede">Добавляй вагоны. Сколько ни добавляй, локомотив остаётся последним. Русский глагол болтается где-то в середине. Турецкий не двигается.</p>
+    <div class="rail" id="rail">
+      <div class="rail-tr" id="railTr">
+        <div class="car s">Кто<i class="wl"></i><i class="wl"></i></div>
+        <div class="car t">Когда<i class="wl"></i><i class="wl"></i></div>
+        <div class="car m">Как<i class="wl"></i><i class="wl"></i></div>
+        <div class="car p">Где<i class="wl"></i><i class="wl"></i></div>
+        <div class="car o">Что<i class="wl"></i><i class="wl"></i></div>
+        <div class="rloco"><svg viewBox="0 0 130 74" aria-hidden="true"><rect x="12" y="4" width="22" height="7" rx="3" fill="#1E2A31"/><rect x="16" y="9" width="14" height="18" rx="3" fill="#33434C"/><rect x="6" y="24" width="76" height="34" rx="15" fill="#1E2A31"/><rect x="26" y="24" width="5" height="34" fill="#FF6A3B"/><rect x="50" y="24" width="5" height="34" fill="#FF6A3B"/><circle cx="9" cy="36" r="5" fill="#FFD27A"/><rect x="78" y="10" width="46" height="48" rx="6" fill="#FF6A3B"/><rect x="74" y="5" width="54" height="8" rx="3" fill="#1E2A31"/><rect x="88" y="18" width="26" height="15" rx="3" fill="#DDF2F6"/><text x="101" y="50" text-anchor="middle" font-size="9" font-family="Oswald,Arial" font-weight="700" fill="#fff" letter-spacing=".5">ГЛАГОЛ</text><rect x="4" y="56" width="122" height="7" rx="3" fill="#33434C"/><path d="M0 63 L10 56 L10 63 Z" fill="#33434C"/></svg><i class="wl"></i><i class="wl w3"></i><i class="wl"></i><span class="puffs" id="puffs"></span></div>
+      </div>
+      <div class="rails"></div>
+      <div class="rail-cap"><span><b>←</b> едет сюда</span><span>локомотив толкает сзади</span></div>
+    </div>
     <div class="train-box rv">
       <div class="lbls"><span>Türkçe</span><span id="trainCnt">2 вагона</span></div>
       <div class="train" id="trainRow"></div>
@@ -797,7 +921,8 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
     <span class="eyebrow">03 · Сцена</span>
     <h2 class="h2">Место перед глаголом это <span class="o">сцена</span></h2>
     <p class="lede">Что стоит прямо перед глаголом, на то и светит прожектор. В русском мы делаем это голосом. В турецком порядком. Нажми на слово, и оно выйдет на сцену.</p>
-    <div class="focus rv">
+    <div class="focus rv" id="focusBox">
+      <span class="lamp"></span><span class="beam" id="beam"></span>
       <div class="chips" id="fx">
         <span class="ch s" data-k="ali"><b>Ali</b></span>
         <span class="ch t" data-k="dun"><b>dün</b></span>
@@ -823,7 +948,8 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
     <span class="eyebrow">04 · Левое ветвление</span>
     <h2 class="h2">Турецкий это русский <span class="t">в зеркале</span></h2>
     <p class="lede">В русском главное слово стоит первым. Дальше к нему цепляются хвосты. Направо. В турецком главное слово стоит последним. Всё, что его описывает, стоит слева. Это и есть «левое ветвление».</p>
-    <div class="mirror rv">
+    <div class="mirror rv" id="mirrorBox">
+      <i class="shine" id="mrShine"></i>
       <div class="chips" id="mr"></div>
       <div class="dir" id="mrDir"><span id="mrLang">RU</span><span class="arr" id="mrArr"><svg class="ic"><use href="#i-arrow-right"/></svg></span><span class="small" id="mrTxt">главное слово впереди, хвосты справа</span></div>
       <div class="mirror-ctl"><button class="btn teal" id="mrBtn"><svg class="ic"><use href="#i-repeat"/></svg>Отразить</button></div>
@@ -896,12 +1022,13 @@ footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
   <div class="wrap">
     <span class="eyebrow">06 · Таксист</span>
     <h2 class="h2">Глагол в конце. <span class="o">Но таксист не в курсе</span></h2>
+    <div class="road rv" id="road"><span class="sun"></span><div class="city" id="city"></div><div class="lane" id="lane"></div><div class="taxi" id="taxi"><svg viewBox="0 0 140 64" aria-hidden="true"><rect x="58" y="0" width="30" height="10" rx="2" fill="#1E2A31"/><text x="73" y="8" text-anchor="middle" font-size="6.5" font-family="Montserrat,Arial" font-weight="800" fill="#FFC63B">TAKSİ</text><path d="M30 28 L44 10 H98 L116 28 Z" fill="#FFC63B"/><path d="M48 14 H70 V28 H38 Z M74 14 H95 L108 28 H74 Z" fill="#BFE6EE"/><rect x="4" y="26" width="132" height="24" rx="10" fill="#FFC63B"/><rect x="4" y="36" width="132" height="5" fill="#1E2A31" opacity=".85"/><g fill="#FFC63B"><rect x="10" y="36" width="5" height="5"/><rect x="20" y="36" width="5" height="5"/><rect x="30" y="36" width="5" height="5"/><rect x="40" y="36" width="5" height="5"/><rect x="50" y="36" width="5" height="5"/><rect x="60" y="36" width="5" height="5"/><rect x="70" y="36" width="5" height="5"/><rect x="80" y="36" width="5" height="5"/><rect x="90" y="36" width="5" height="5"/><rect x="100" y="36" width="5" height="5"/><rect x="110" y="36" width="5" height="5"/><rect x="120" y="36" width="5" height="5"/></g><circle cx="132" cy="31" r="3.5" fill="#FFF3D6"/><rect x="2" y="30" width="5" height="5" rx="1" fill="#E8481A"/><g class="tw"><circle cx="34" cy="51" r="10" fill="#1E2A31"/><circle cx="34" cy="51" r="4.5" fill="#C9D3D7"/><path d="M34 43v16M26 51h16" stroke="#C9D3D7" stroke-width="1.6"/></g><g class="tw"><circle cx="106" cy="51" r="10" fill="#1E2A31"/><circle cx="106" cy="51" r="4.5" fill="#C9D3D7"/><path d="M106 43v16M98 51h16" stroke="#C9D3D7" stroke-width="1.6"/></g></svg></div></div>
     <div class="chat" id="chat">
-      <div class="bub me rv">Анталья. Сажусь в такси. Таксист говорит:</div>
-      <div class="bub him rv"><span class="trk">Gidiyor muyuz abi havalimanına? <button class="say" data-say="Gidiyor muyuz abi havalimanına?" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></span><small>Едем, брат, в аэропорт?</small></div>
-      <div class="bub me rv">Глагол в начале. Аэропорт в хвосте. Говорю, abi, у нас в TÖMER глагол стоял в конце.</div>
-      <div class="bub him rv"><span class="trk">Hoca taksi sürmüyor. <button class="say" data-say="Hoca taksi sürmüyor" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></span><small>Ходжа такси не водит.</small></div>
-      <div class="bub me rv">Справедливо.</div>
+      <div class="bub me">Анталья. Сажусь в такси. Таксист говорит:</div>
+      <div class="bub him"><span class="trk">Gidiyor muyuz abi havalimanına? <button class="say" data-say="Gidiyor muyuz abi havalimanına?" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></span><small>Едем, брат, в аэропорт?</small></div>
+      <div class="bub me">Глагол в начале. Аэропорт в хвосте. Говорю, abi, у нас в TÖMER глагол стоял в конце.</div>
+      <div class="bub him"><span class="trk">Hoca taksi sürmüyor. <button class="say" data-say="Hoca taksi sürmüyor" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></span><small>Ходжа такси не водит.</small></div>
+      <div class="bub me">Справедливо.</div>
     </div>
     <p class="lede" style="margin-top:22px">Это <b>devrik cümle</b>, перевёрнутое предложение. В живой речи турок бросает глагол, а потом добавляет хвостик. На эмоциях. Между делом. В песнях постоянно.</p>
     <div class="dv">
@@ -1213,6 +1340,7 @@ function sovInit(){
       $$('#fxTaps button').forEach(function(b){ b.classList.toggle('on', b.dataset.k === k); });
       var sent = f.o.map(function(x, idx){ return TX[x][idx === 0 ? 0 : 1]; }).join(' ') + ' aldı.';
       if(user){ say(sent); clearInterval(auto); auto = null; stopAuto = true; }
+      box.dispatchEvent(new CustomEvent('fxset', {detail:k}));
     }
     var stopAuto = false;
     box.addEventListener('click', function(e){ var c = e.target.closest('.ch'); if(c && c.dataset.k !== 'v') set(c.dataset.k, true); });
@@ -1238,6 +1366,7 @@ function sovInit(){
       var a = $('#mrArr');
       if(G) G.to(a, {rotation:tr ? 180 : 0, duration:.6, ease:'back.out(2)'}); else a.style.transform = tr ? 'rotate(180deg)' : '';
       if(tr && stopped) say("Timur'un annesinin arabasının rengi");
+      box.dispatchEvent(new CustomEvent('mrset', {detail:tr}));
     }
     $('#mrBtn').addEventListener('click', function(){ stopped = true; clearInterval(t); t = null; set(!tr); });
     if(reduce) set(true);
@@ -1409,7 +1538,6 @@ function sovInit(){
       whenVisible(vid, function(){ if(!loaded){ vid.poster = vid.dataset.poster; vid.src = vid.dataset.src; loaded = true; } var p = vid.play(); if(p && p.catch) p.catch(function(){}); }, function(){ try{ vid.pause(); }catch(e){} }, .3);
     } else { vid.poster = vid.dataset.poster; vid.src = vid.dataset.src; }
     // phones tilt in
-    if(G) G.from('#phones .phone', {rotationY:-25, rotation:-4, y:30, duration:.9, ease:'back.out(1.6)', stagger:.07, scrollTrigger:{trigger:'#phones', start:'top 85%', once:true}});
     // paths
     var n1 = 0, M1 = ['Merhaba. В который раз.', 'Опять Merhaba. Глагол, кстати, в конце.', 'Ладно. Второй путь справа →'];
     $('#path1').addEventListener('click', function(){
@@ -1426,7 +1554,247 @@ function sovInit(){
     window.addEventListener('scroll', dockUpd, {passive:true}); dockUpd();
   })();
 }
-if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sovInit); else sovInit();
+function liveInit(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = (window.gsap && window.ScrollTrigger && !reduce) ? window.gsap : null;
+  var touch = window.matchMedia && matchMedia('(hover: none)').matches;
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function whenVisible(el, on, off, th){
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){ on(); return; }
+    new IntersectionObserver(function(es){ es.forEach(function(en){ en.isIntersecting ? on() : (off && off()); }); }, {threshold:th||0}).observe(el);
+  }
+  function enter(el, fn, start){ if(G && el) ScrollTrigger.create({trigger:el, start:start||'top 85%', once:true, onEnter:fn}); }
+  function say(t){
+    try{
+      if(!('speechSynthesis' in window)) return;
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(t); u.lang = 'tr-TR'; u.rate = .85;
+      var v = speechSynthesis.getVoices().find(function(x){ return /^tr/i.test(x.lang); }); if(v) u.voice = v;
+      speechSynthesis.speak(u);
+    }catch(e){}
+  }
+
+  /* ---------- marquee bands (scroll velocity -> speed + skew) ---------- */
+  if(G){
+    var tracks = $$('.band .track');
+    tracks.forEach(function(t){
+      var rev = t.parentNode.classList.contains('b2');
+      t._tw = G.fromTo(t, {xPercent:rev ? -50 : 0}, {xPercent:rev ? 0 : -50, duration:34, ease:'none', repeat:-1, paused:true});
+      whenVisible(t.parentNode, function(){ t._tw.play(); }, function(){ t._tw.pause(); });
+    });
+    var skews = $$('.band').map(function(b){ return G.quickTo(b, 'skewX', {duration:.45, ease:'power3'}); });
+    var calm = null;
+    ScrollTrigger.create({onUpdate:function(self){
+      var vel = self.getVelocity(), sk = G.utils.clamp(-7, 7, vel / 240);
+      skews.forEach(function(q){ q(sk); });
+      tracks.forEach(function(t){ t._tw.timeScale(1 + Math.min(5, Math.abs(vel) / 500)); G.to(t._tw, {timeScale:1, duration:1, delay:.15, overwrite:true}); });
+      clearTimeout(calm); calm = setTimeout(function(){ skews.forEach(function(q){ q(0); }); }, 140);
+    }});
+  }
+
+  /* ---------- hero: floating Turkish letters + pointer parallax ---------- */
+  if(G){
+    $$('.lt').forEach(function(l, i){
+      G.to(l, {y:'+=' + (9 + i*3), x:'+=' + (i%2 ? 7 : -7), rotation:i%2 ? 14 : -14, duration:1.9 + i*.35, yoyo:true, repeat:-1, ease:'sine.inOut'});
+    });
+    G.from('.lt', {scale:.3, rotation:-90, duration:1, ease:'back.out(2.4)', stagger:.12, delay:.6});
+    if(!touch){
+      var objs = $$('.obj, .lt').map(function(o){ return {qx:G.quickTo(o, 'x', {duration:1, ease:'power3'}), d:parseFloat(o.dataset.depth || .6)}; });
+      window.addEventListener('pointermove', function(e){ var nx = e.clientX / window.innerWidth - .5; objs.forEach(function(q){ q.qx(nx * -46 * q.d); }); }, {passive:true});
+    }
+  }
+
+  /* ---------- hand-drawn underlines under coloured words ---------- */
+  $$('.h2 .t, .h2 .o').forEach(function(s){
+    if(s.getClientRects().length !== 1) return;
+    s.style.position = 'relative';
+    s.insertAdjacentHTML('beforeend', '<svg class="scrib" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 40 3, 90 2, 122 7 S 178 12, 197 4"/></svg>');
+    var sv = s.lastElementChild;
+    enter(s, function(){ G.fromTo(sv, {scaleX:0}, {scaleX:1, duration:.9, ease:'power2.out', delay:.35}); }, 'top 88%');
+  });
+
+  /* ---------- story: typewriter on Turkish lines ---------- */
+  if(G) $$('.post p.tr').forEach(function(p){
+    var full = p.textContent;
+    enter(p, function(){
+      var o = {n:0};
+      G.to(o, {n:full.length, duration:Math.max(.8, full.length * .055), ease:'none', delay:.3, onUpdate:function(){ p.textContent = full.slice(0, Math.round(o.n)) + (o.n < full.length ? '▍' : ''); }});
+    });
+  });
+
+  /* ---------- market: tomatoes fall, needle overshoots to 2 kg ---------- */
+  (function(){
+    var m = $('#market'); if(!m || !G) return;
+    var toms = $$('#market .tom'), needle = $('#mkNeedle'), read = $('#mkRead'), pan = $('#mkPan'), b1 = $('#mkB1'), b2 = $('#mkB2'), b3 = $('#mkB3');
+    needle.removeAttribute('transform');
+    G.set(needle, {rotation:60, svgOrigin:'180 178'});
+    var tl = G.timeline({repeat:-1, repeatDelay:.8, paused:true});
+    tl.set(toms, {y:-200, opacity:1})
+      .set([b1, b2, b3], {scale:0, opacity:1, transformOrigin:'50% 100%'})
+      .set(needle, {rotation:-60, svgOrigin:'180 178'})
+      .set(pan, {y:0})
+      .call(function(){ read.textContent = '0.0 кг'; })
+      .to(b1, {scale:1, duration:.5, ease:'back.out(2.2)'}, '+=.3')
+      .to(toms, {y:0, duration:.6, ease:'bounce.out', stagger:.3}, '+=.15')
+      .to(needle, {rotation:60, duration:toms.length * .3 + .3, ease:'none', onUpdate:function(){ var r = G.getProperty(needle, 'rotation'); read.textContent = ((r + 60) / 60).toFixed(1) + ' кг'; }}, '<')
+      .to(pan, {y:4, duration:2.4, ease:'none'}, '<')
+      .to(b2, {scale:1, duration:.5, ease:'back.out(2)'}, '-=.2')
+      .to(b3, {scale:1, duration:.5, ease:'back.out(2.4)'}, '+=.25')
+      .to({}, {duration:2.2})
+      .to(toms.concat([b1, b2, b3]), {opacity:0, duration:.35});
+    whenVisible(m, function(){ tl.play(); }, function(){ tl.pause(); }, .3);
+  })();
+
+  /* ---------- rail: train pushed by the verb, scrubbed by scroll ---------- */
+  (function(){
+    var rail = $('#rail'), tr = $('#railTr'); if(!rail || !G) return;
+    var wheels = $$('.wl', tr);
+    G.fromTo(tr, {x:function(){ return rail.clientWidth * .9; }}, {x:0, ease:'none', scrollTrigger:{trigger:rail, start:'top 95%', end:'top 35%', scrub:.6, invalidateOnRefresh:true, onUpdate:function(self){ G.set(wheels, {rotation:-self.progress * 1080}); }}});
+    var puffs = $('#puffs'), pt = null;
+    function puff(){
+      var p = document.createElement('i'); p.className = 'puff'; puffs.appendChild(p);
+      G.fromTo(p, {scale:.35, x:0, y:0, opacity:.95}, {scale:1.8, x:14 + Math.random()*16, y:-44 - Math.random()*16, opacity:0, duration:1.6, ease:'power1.out', onComplete:function(){ p.remove(); }});
+    }
+    whenVisible(rail, function(){ if(!pt) pt = setInterval(puff, 380); }, function(){ clearInterval(pt); pt = null; });
+  })();
+
+  /* ---------- focus: spotlight beam follows the word on stage ---------- */
+  (function(){
+    var fb = $('#focusBox'), beam = $('#beam'), box = $('#fx'); if(!fb || !beam) return;
+    function aim(){
+      var c = box.querySelector('.ch.on'); if(!c) return;
+      var tx = box.offsetLeft + c.offsetLeft + c.offsetWidth/2, ty = box.offsetTop + c.offsetTop + c.offsetHeight/2;
+      var dx = tx - fb.clientWidth/2, dy = ty - 34, ang = -Math.atan2(dx, dy) * 180 / Math.PI, len = Math.hypot(dx, dy) + 6;
+      if(G) G.to(beam, {rotation:ang, height:len, duration:.85, ease:'back.out(1.5)'});
+      else { beam.style.height = len + 'px'; beam.style.transform = 'rotate(' + ang + 'deg)'; }
+    }
+    box.addEventListener('fxset', function(){ setTimeout(aim, 20); });
+    window.addEventListener('resize', aim);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(aim);
+    aim();
+    if(G){ var fl = G.to(beam, {opacity:.7, duration:.09, yoyo:true, repeat:-1, repeatDelay:2.6, ease:'none', paused:true}); whenVisible(fb, function(){ fl.play(); }, function(){ fl.pause(); }); }
+  })();
+
+  /* ---------- mirror: glass shine on every flip ---------- */
+  (function(){
+    var sh = $('#mrShine'), mr = $('#mr'); if(!sh || !mr || !G) return;
+    G.set(sh, {skewX:-18, xPercent:-140});
+    mr.addEventListener('mrset', function(){ G.fromTo(sh, {xPercent:-140}, {xPercent:420, duration:1, ease:'power2.inOut'}); });
+  })();
+
+  /* ---------- road: taxi drives in, idles, leaves ---------- */
+  (function(){
+    var road = $('#road'), taxi = $('#taxi'), lane = $('#lane'), city = $('#city'); if(!road || !G) return;
+    var spin = G.to($$('.tw', taxi), {rotation:360, transformOrigin:'50% 50%', duration:.45, ease:'none', repeat:-1, paused:true});
+    var laneT = G.fromTo(lane, {x:0}, {x:-560, duration:3.2, ease:'none', repeat:-1, paused:true});
+    var cityT = G.fromTo(city, {x:0}, {x:-360, duration:16, ease:'none', repeat:-1, paused:true});
+    var bob = G.to(taxi, {y:-2.5, duration:.18, yoyo:true, repeat:-1, ease:'sine.inOut', paused:true});
+    var drive = G.timeline({repeat:-1, paused:true});
+    drive.fromTo(taxi, {x:-150}, {x:function(){ return road.clientWidth/2 - 76; }, duration:1.6, ease:'power2.out'})
+         .to(taxi, {x:function(){ return road.clientWidth/2 - 56; }, duration:2.4, ease:'sine.inOut'})
+         .to(taxi, {x:function(){ return road.clientWidth + 30; }, duration:1.1, ease:'power2.in'});
+    var all = [spin, laneT, cityT, bob, drive];
+    whenVisible(road, function(){ all.forEach(function(t){ t.play(); }); }, function(){ all.forEach(function(t){ t.pause(); }); });
+  })();
+
+  /* ---------- chat: typing indicator before each reply ---------- */
+  (function(){
+    var chat = $('#chat'); if(!chat || !G) return;
+    var bs = $$('.bub', chat);
+    enter(chat, function(){
+      G.set(bs, {autoAlpha:0, y:18, scale:.9});
+      var t = 0;
+      bs.forEach(function(b){
+        var me = b.classList.contains('me');
+        if(!me){
+          (function(b, t0){
+            G.delayedCall(t0, function(){
+              var ty = document.createElement('div'); ty.className = 'bub him typing'; ty.innerHTML = '<i></i><i></i><i></i>';
+              b.parentNode.insertBefore(ty, b);
+              G.from(ty, {scale:.6, y:10, duration:.35, ease:'back.out(2)'});
+              G.delayedCall(1.05, function(){ ty.remove(); });
+            });
+          })(b, t);
+          t += 1.1;
+        }
+        G.to(b, {autoAlpha:1, y:0, scale:1, duration:.55, ease:'back.out(1.8)', delay:t, transformOrigin:me ? '100% 100%' : '0% 100%'});
+        t += me ? .9 : .6;
+      });
+    }, 'top 80%');
+  })();
+
+  /* ---------- SOV coins: tap to flip to the Turkish term ---------- */
+  (function(){
+    var coins = $$('#sovL .coinL'), TRm = ['özne','nesne','yüklem'], RUm = ['кто','что','глагол'];
+    function flipCoin(c, i, speak){
+      c._tr = !c._tr; var sm = c.querySelector('small');
+      if(G){ G.to(c, {rotationY:'+=360', duration:1, ease:'back.out(1.3)'}); G.delayedCall(.25, function(){ sm.textContent = c._tr ? TRm[i] : RUm[i]; }); }
+      else sm.textContent = c._tr ? TRm[i] : RUm[i];
+      if(speak && c._tr) say(TRm[i]);
+    }
+    coins.forEach(function(c, i){ c.addEventListener('click', function(){ flipCoin(c, i, true); }); });
+    enter($('#sovL'), function(){ coins.forEach(function(c, i){ G.delayedCall(1.7 + i*.35, function(){ flipCoin(c, i, false); }); }); }, 'top 70%');
+  })();
+
+  /* ---------- Kazakh grid: column-by-column pulse ---------- */
+  (function(){
+    var g = $('#kz .kz-g'); if(!g || reduce) return;
+    var cells = $$('.cell', g), col = 0, t = null;
+    function tick(){
+      cells.forEach(function(c){ c.classList.remove('hl', 'ok'); });
+      [0, 4, 8].forEach(function(r){
+        var c = cells[r + col];
+        c.classList.add(r === 8 && col < 2 ? 'ok' : 'hl');
+        if(G) G.fromTo(c, r === 8 && col >= 2 ? {x:-6} : {scale:1.12}, r === 8 && col >= 2 ? {x:0, duration:.5, ease:'elastic.out(1,.3)'} : {scale:1, duration:.5, ease:'back.out(3)'});
+      });
+      col = (col + 1) % 4;
+    }
+    whenVisible(g, function(){ if(!t) t = setInterval(tick, 1300); }, function(){ clearInterval(t); t = null; });
+  })();
+
+  /* ---------- AD extras ---------- */
+  var n = $('#n128');
+  if(n && G){
+    var tg = n.querySelector('.wd') || n;
+    enter(n, function(){ var o = {v:1}; G.to(o, {v:128, duration:1.6, ease:'power3.out', onUpdate:function(){ tg.textContent = Math.round(o.v); }}); });
+  }
+  if(G) $$('.script').forEach(function(sc){
+    enter(sc, function(){ G.fromTo(sc, {clipPath:'inset(-30% 100% -30% 0)'}, {clipPath:'inset(-30% 0% -30% 0)', duration:1.5, ease:'power2.inOut'}); }, 'top 88%');
+  });
+  var amt = $('.price.main .amt b');
+  if(amt) enter(amt, function(){
+    G.fromTo(amt, {scale:2.6, rotation:-16}, {scale:1, rotation:0, duration:.9, ease:'bounce.out'});
+    G.fromTo('.price.main .ribbon', {rotation:-8, scale:.6}, {rotation:0, scale:1, duration:.8, ease:'elastic.out(1,.4)', delay:.4});
+  });
+  if(G) $$('.thanks .obj svg').forEach(function(h){
+    var tw = G.to(h, {scale:1.14, duration:.42, yoyo:true, repeat:-1, ease:'sine.inOut', transformOrigin:'50% 60%', paused:true});
+    whenVisible(h.closest('.thanks'), function(){ tw.play(); }, function(){ tw.pause(); });
+  });
+
+  /* ---------- phones: 3D coverflow ---------- */
+  (function(){
+    var ph = $('#phones'); if(!ph) return;
+    var items = $$('.phone', ph), raf = 0;
+    function upd(){
+      raf = 0; var w = ph.clientWidth;
+      items.forEach(function(p){
+        var d = (p.offsetLeft - ph.scrollLeft + p.offsetWidth/2 - w/2) / w;
+        var ry = Math.max(-38, Math.min(38, -d * 55)), sc = 1 - Math.min(Math.abs(d), 1) * .14;
+        p.style.transform = 'rotateY(' + ry.toFixed(1) + 'deg) scale(' + sc.toFixed(3) + ')';
+      });
+    }
+    ph.addEventListener('scroll', function(){ if(!raf) raf = requestAnimationFrame(upd); }, {passive:true});
+    window.addEventListener('resize', upd); upd();
+    enter(ph, function(){ ph.style.scrollSnapType = 'none'; G.to(ph, {scrollLeft:220, duration:1.1, ease:'power2.inOut', yoyo:true, repeat:1, onComplete:function(){ ph.style.scrollSnapType = ''; }}); }, 'top 75%');
+  })();
+
+  if(G){ ScrollTrigger.refresh(); }
+}
+
+function allInit(){ sovInit(); try{ liveInit(); }catch(e){ if(window.console) console.error(e); } }
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', allInit); else allInit();
 </script>
 
 </body>
