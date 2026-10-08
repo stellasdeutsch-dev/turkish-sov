@@ -523,7 +523,8 @@ section{position:relative;padding:72px 0}
 .dock.on{transform:none}
 .dock .pr{font:700 26px/1 var(--fh)}
 .dock .pr small{display:block;font:500 10.5px/1.3 var(--fb);color:#A9BCC3;letter-spacing:.04em}
-.dock .btn{margin-left:auto;padding:14px 16px;font-size:11px}
+.dock .btn{margin-left:auto;padding:15px 20px;font-size:11.5px;white-space:nowrap}
+.dock .pr small{white-space:nowrap}
 @media (min-width:760px){.dock{left:50%;right:auto;width:560px;margin-left:-280px}}
 
 footer{padding:30px 0 120px;text-align:center;font-size:12px;color:var(--mute)}
@@ -613,6 +614,18 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
 .phone{transform-style:preserve-3d}
 @media (prefers-reduced-motion:reduce){.track,.lbls b,.btn::after,.bub.typing i{animation:none!important}}
 
+.btn.wa{background:linear-gradient(180deg,#3BE07A,#1EB257);box-shadow:0 16px 28px -12px rgba(30,178,87,.75), inset 0 -3px 0 rgba(0,0,0,.12)}
+.btn.wa .ic{font-size:18px}
+.wa-note{margin-top:10px;text-align:center;font-size:12.5px;color:var(--mute);line-height:1.45}
+.dock .wa-r{margin-left:auto;width:46px;height:46px;border-radius:14px;background:#25D366;color:#fff;display:grid;place-items:center;flex:none;text-decoration:none;box-shadow:0 10px 18px -8px rgba(37,211,102,.8)}
+.dock .wa-r .ic{font-size:22px}
+.dock .wa-r + .btn{margin-left:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.wa-card{margin-top:22px;display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;box-shadow:var(--sh-s);padding:16px;text-decoration:none;border:2px solid #CFF5DD}
+.wa-card .ib{width:48px;height:48px;border-radius:14px;background:#25D366;color:#fff;display:grid;place-items:center;flex:none;font-size:24px}
+.wa-card b{display:block;font-size:15px}
+.wa-card span{font-size:13px;color:var(--mute)}
+.wa-card .ic.ar{margin-left:auto;color:#1EB257;font-size:20px}
 /* reveal: GSAP sets transforms; nothing hidden without it */
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -692,6 +705,8 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
 <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></symbol>
 <symbol id="i-key" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></symbol>
 <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-message-circle-more" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></symbol>
 
 </svg>
 
@@ -1212,6 +1227,7 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
           <li><svg class="ic"><use href="#i-flag"/></svg><span><b>Стажировка в консульстве РК</b> в Анталье.</span></li>
         </ul>
         <div class="say-it">Я знаю академическую турецкую систему изнутри. Учебники TÖMER легли в основу платформы. Только объяснено по-человечески.</div>
+        <a class="wa-card" href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener"><span class="ib"><svg class="ic"><use href="#i-message-circle-more"/></svg></span><div><b>Написать Тимуру в WhatsApp</b><span>Вопросы по платформе и покупка</span></div><svg class="ic ar"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -1252,6 +1268,8 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
         </ul>
         <div class="amt"><b>$30</b><small>один платёж</small></div>
         <a class="btn big" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Получить доступ <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn big wa" href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-message-circle-more"/></svg>Купить через WhatsApp</a>
+        <div class="wa-note">Удобнее в переписке? Напиши Тимуру. Ответит на вопросы и поможет с покупкой.</div>
       </div>
     </div>
   </div>
@@ -1266,7 +1284,7 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
       <button class="path p1" id="path1"><svg class="feather"><use href="#o-feather"/></svg><span class="pn">1 путь</span><b>Оставить всё как есть</b><p>Закрыть вкладку. Через месяц снова открыть приложение. Снова Merhaba. Снова «зачем мне это».</p><span class="msg" id="p1msg"></span></button>
       <a class="path p2" id="path2" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener" style="text-decoration:none"><svg class="feather"><use href="#o-plane"/></svg><span class="pn">2 путь</span><b>Начать с порядка</b><p>Открыть свой уровень сегодня. Взять следующий гайд. Говорить с таксистом, продавцом, соседом. Без переводчика.</p><span class="msg" style="color:var(--or)">$30 один раз →</span></a>
     </div>
-    <div class="choose"><a class="btn big" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Выбираю второй путь</a></div>
+    <div class="choose cta-row"><a class="btn big" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Выбираю второй путь</a><a class="btn big wa" href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-message-circle-more"/></svg>WhatsApp</a></div>
   </div>
 </section>
 
@@ -1280,7 +1298,8 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
       <details class="rv"><summary>Это подписка?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>Нет. $30 один раз. Доступ навсегда. Никаких списаний каждый месяц.</p></details>
       <details class="rv"><summary>Где это открывается?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>На телефоне и на ноутбуке. Часть в Notion, часть на интерактивных сайтах. Видео выше записано с реального экрана.</p></details>
       <details class="rv"><summary>Я уже занимаюсь с репетитором. Зачем мне это?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>Как у Дарьи из отзывов. Репетитор раз в неделю, а между занятиями материалы. Пришёл на урок, уже понимая тему.</p></details>
-      <details class="rv"><summary>Как оплатить?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>Через Lava. Нажимаешь «Получить доступ», оплачиваешь, получаешь доступ.</p></details>
+      <details class="rv"><summary>Как оплатить?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>Два способа. Через Lava: нажимаешь «Получить доступ», оплачиваешь, получаешь доступ. Или пишешь Тимуру в <a href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener" style="color:#1EB257;font-weight:700">WhatsApp</a>, и он поможет с покупкой.</p></details>
+      <details class="rv"><summary>Остались вопросы?<svg class="ic"><use href="#i-chevron-down"/></svg></summary><p>Напиши в <a href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener" style="color:#1EB257;font-weight:700">WhatsApp</a>. Отвечает сам Тимур. Без ботов.</p></details>
     </div>
   </div>
 </section>
@@ -1292,13 +1311,14 @@ html:not(.gs) .taxi{left:calc(50% - 66px)}
     <h2 class="h2">Teşekkürler</h2>
     <div class="script">что дочитал</div>
     <p class="lede">Глагол в конце. Помидоры по килограмму. Остальные 127 тем ждут в Alterna.</p>
-    <a class="btn big" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Получить доступ за $30 <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    <div class="cta-row"><a class="btn big" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Получить доступ за $30 <svg class="ic"><use href="#i-arrow-right"/></svg></a><a class="btn big wa" href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-message-circle-more"/></svg>Написать в WhatsApp</a></div>
   </div>
 </section>
 
 <div class="dock" id="dock">
   <div class="pr">$30<small>A0 → C1 · навсегда</small></div>
-  <a class="btn" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Получить доступ</a>
+  <a class="wa-r" href="https://wa.me/message/RCHLEOGGLZ5OC1" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg class="ic"><use href="#i-message-circle-more"/></svg></a>
+  <a class="btn" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">Купить</a>
 </div>
 
 
